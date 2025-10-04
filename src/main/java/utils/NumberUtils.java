@@ -15,4 +15,25 @@ public class NumberUtils {
             }
         }return -1;
     }
+
+
+    /**
+     * Finds the last position of a value in an array
+     * @param nums the array of integers
+     * @param value teh value to find
+     * @return the indec pf the last occurence -1 if not found
+     */
+
+    public static int getLastPos(int[] nums,int value){
+        for(int i= nums.length-1;i>=0;i--){
+            if(nums[i]==value){
+                return i;
+            }
+
+        }
+        return -1;
+
+    }
+
+
 }
