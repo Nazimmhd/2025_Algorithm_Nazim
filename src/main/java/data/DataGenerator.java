@@ -10,7 +10,7 @@ public class DataGenerator {
      *
      * @return an array of random numbers, or null if the number of elements requested is <= 0
      */
-    public static int[] getRandomArray(){
+    public static int[] getRandomArray(int numElements){
         if(numElements <= 0){
             return null;
         }

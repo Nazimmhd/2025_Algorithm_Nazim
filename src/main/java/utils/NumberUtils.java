@@ -100,7 +100,7 @@ public static boolean isSubset(int[] a , int[] b){
 }
 /**
  * return the max value in an array
- * @param The array of integers is nums
+ * @param the array of integers is nums
  * @return the max value in the array
  */
 

@@ -11,7 +11,7 @@ public class Statistics {
         // array copy
         int[] hardCoded ={1,2,1,4,5,3,7,2,1};
         //randomm array
-        int[] randomArray = DataGenerator.getRandomArray();
+        int[] randomArray = DataGenerator.getRandomArray(10);
         //Displaying Arrays
         System.out.println("hardCoded" + Arrays.toString(hardCoded));
         System.out.println("random" + Arrays.toString(randomArray));
