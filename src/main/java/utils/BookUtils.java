@@ -31,8 +31,26 @@ public class BookUtils {
 
        }
 
-
+return result;
     }
-
-
+/**
+ * @param books the array of Book object
+ * @param target the Book object to be deleted
+ * @return if the book was founda and deleted false otherwise
+ */
+public static boolean delete(Book[] books, Book target){
+    if (books==null||target==null){
+        return false;
+    }
+    for (int i=0;i< books.length;i++){
+        if (target.equals(books[i])){
+            for (int j=i ;j< books.length-1;j++){
+                books[j]=books[j+1];
+            }
+            books[books.length-1]=null;
+            return true;
+        }
+    }
+    return false;
+}
 }
