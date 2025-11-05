@@ -75,6 +75,38 @@ public static boolean delete(Book[] books, Book target){
     return false;
 }
 
+/**
+ * @param books the array of Book objects to be amended
+ * @param target is the Book to be deleted
+ * @return the number of instance removed the array
+ *
+ *
+ *
+ */
+
+
+public static int deleteAll(Book[] books, Book target){
+    if (books==null||target==null){
+        throw new IllegalArgumentException("nothing to be found");
+
+    }
+    int nIndex =0;
+    int dCount=0;
+
+    for (int i=0;i< books.length;i++){
+        if (books[i]!=null && books[i].equals(target)){
+            dCount++;
+        }
+        else {
+            books[nIndex++]=books[i];
+        }
+    }
+    while (nIndex< books.length){
+        books[nIndex++]=null;
+    }
+    return dCount;
+}
+
 
 
 }
