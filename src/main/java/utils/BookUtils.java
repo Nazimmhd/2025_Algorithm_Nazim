@@ -11,7 +11,7 @@ public class BookUtils {
 
     public static String toString(Book[] books){
        if (books==null||books.length==0){
-           return "Nobooks found";
+           throw new IllegalArgumentException( "Nobooks found");
        }
 
        String result ="";
@@ -61,7 +61,7 @@ return result;
  */
 public static boolean delete(Book[] books, Book target){
     if (books==null||target==null){
-        return false;
+      throw new IllegalArgumentException("");
     }
     for (int i=0;i< books.length;i++){
         if (target.equals(books[i])){
@@ -129,7 +129,29 @@ public static int replace(Book[] books,Book oBook, Book nBook){
     return replacedCount;
 }
 
+/**
+ * @param books the sorted array of Book object to be amended
+ * @param nBook the Book to be inserted
+ * @return the Book shift out of the array after insertionor null if no insertion occurred
+ */
+
+public static Book sortedInsert(Book[] books,Book nBook){
+    if (books==null||nBook==null){
+        throw new IllegalArgumentException("Nothing found");
+    }
+    for (int i=0;i< books.length;i++){
+        if(books[i]!=null&&nBook.compareTo(books[i])<0){
+            Book lost=books[books.length-1];
+            for (int j= books.length-1; j>i ;j--){
+                books[j]=books[j-1];
 
 
+            }
+            books[i]=nBook;
+            return lost;
+        }
+    }
+    return null;
 
+}
 }

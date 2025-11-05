@@ -84,10 +84,10 @@ public class BookGenerator {
      * Each Book is generated using fixed author and title information, plus a randomly generated ISBN (with length 10).
      * Up to 4 duplicate books will be placed in randomly selected positions within the array.
      * </p>
-     * @param numBooks the number of Books to be generated within the array
+     *
      * @return The specified number of randomly generated Book objects, stored in an array
      */
-    public static Book [] getRandomArray(int numBooks){
+    public static Book [] getRandomArray(){
         Book [] books = new Book[numBooks];
         for (int i = 0; i < numBooks; i++) {
             books[i] = generateBook();
@@ -142,7 +142,7 @@ public class BookGenerator {
         System.out.println(randomBook.format());
 
         // Generate an array of 10 random books and display it
-        Book [] books = getRandomArray(10);
+        Book [] books = getRandomArray();
         for(Book b: books){
             System.out.println(b);
         }
