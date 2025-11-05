@@ -33,6 +33,27 @@ public class BookUtils {
 
 return result;
     }
+    /**
+     * @param books the Array of Book object to be amended
+     * @param pos the indexof the Books to owerwrite
+     * @return the boook that was deleted
+     */
+    public static Book emptyIndex(Book[] books, int pos){
+        if (books==null){
+            throw new IllegalArgumentException("invalid");
+        }
+        if (pos<0||pos> books.length){
+            throw new IllegalArgumentException("invalid pos");
+        }
+        Book ToDelete=books[pos];
+        books[pos]=null;
+        return ToDelete;
+
+    }
+
+
+
+
 /**
  * @param books the array of Book object
  * @param target the Book object to be deleted
@@ -53,4 +74,7 @@ public static boolean delete(Book[] books, Book target){
     }
     return false;
 }
+
+
+
 }
