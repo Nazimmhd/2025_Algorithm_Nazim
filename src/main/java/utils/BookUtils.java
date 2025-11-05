@@ -106,6 +106,29 @@ public static int deleteAll(Book[] books, Book target){
     }
     return dCount;
 }
+/**
+ * @param books the array of Book obj to be amended
+ * @param oBook the Book to be  replaced
+ * @param nBook the Book insert in ts place
+ * @return the number of Books replaced in the array
+ */
+
+
+public static int replace(Book[] books,Book oBook, Book nBook){
+    if (books==null||oBook==null||nBook==null){
+        throw new IllegalArgumentException("invalid");
+    }
+
+    int replacedCount=0;
+    for (int i=0;i< books.length;i++){
+        if (books[i]!=null&&books[i].equals(oBook)){
+            books[i]=nBook;
+            replacedCount++;
+        }
+    }
+    return replacedCount;
+}
+
 
 
 
